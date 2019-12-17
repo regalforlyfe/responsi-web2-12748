@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::('/jobs', 'JobsController');
-// Route::('/employees', 'EmployeesController');
+Route::get('/pale', function () {
+    return view('pale');
+});
+
+Route::resource('/jobs', 'JobsController');
+Route::resource('/employees', 'EmployeesController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
